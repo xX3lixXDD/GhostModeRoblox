@@ -1,12 +1,3 @@
--- GhostMode by: xX_3lixXDD
--- LocalScript
--- 🌀 ميزات:
--- 1) GUI صغير وسهل السحب (يدعم الموبايل والكمبيوتر)
--- 2) زر تفعيل/تعطيل لاختراق الجدران (Noclip)
--- 3) أزرار إغلاق وتصغير مع صوت نقر
--- 4) يشتغل في أي ماب (Client-side)
-
--- ✅ الخدمات
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
@@ -15,7 +6,6 @@ local SoundService = game:GetService("SoundService")
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
--- ====== GUI ======
 local gui = Instance.new("ScreenGui")
 gui.Name = "GhostModeGui"
 gui.ResetOnSpawn = false
@@ -41,7 +31,6 @@ title.TextSize = 16
 title.TextXAlignment = Enum.TextXAlignment.Left
 title.Parent = frame
 
--- زر الإغلاق
 local closeBtn = Instance.new("TextButton")
 closeBtn.Size = UDim2.new(0, 22, 0, 22)
 closeBtn.Position = UDim2.new(1, -26, 0, 4)
@@ -52,7 +41,6 @@ closeBtn.Font = Enum.Font.SourceSansBold
 closeBtn.TextSize = 16
 closeBtn.Parent = frame
 
--- زر التصغير
 local miniBtn = Instance.new("TextButton")
 miniBtn.Size = UDim2.new(0, 22, 0, 22)
 miniBtn.Position = UDim2.new(1, -50, 0, 4)
@@ -63,7 +51,6 @@ miniBtn.Font = Enum.Font.SourceSansBold
 miniBtn.TextSize = 16
 miniBtn.Parent = frame
 
--- زر التفعيل
 local toggleBtn = Instance.new("TextButton")
 toggleBtn.Size = UDim2.new(1, -20, 0, 40)
 toggleBtn.Position = UDim2.new(0, 10, 0, 38)
@@ -85,7 +72,6 @@ statusLbl.TextSize = 15
 statusLbl.TextXAlignment = Enum.TextXAlignment.Left
 statusLbl.Parent = frame
 
--- ====== صوت النقر ======
 local clickSound = Instance.new("Sound")
 clickSound.SoundId = "rbxassetid://2101148"
 clickSound.Volume = 0.8
@@ -95,7 +81,6 @@ local function click()
 	clickSound:Play()
 end
 
--- ====== منطق التفعيل ======
 local noclipEnabled = false
 local connection
 
@@ -129,7 +114,6 @@ toggleBtn.MouseButton1Click:Connect(function()
 	end
 end)
 
--- ====== أزرار الإغلاق والتصغير ======
 local minimized = false
 local savedSize = frame.Size
 
